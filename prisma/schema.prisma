@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model transactions {
+  id Int @id @default(autoincrement())
+  value Float
+  description String
+  method String
+  card_number Int
+  card_owner String
+  validity DateTime
+  verification_code Int
+}
