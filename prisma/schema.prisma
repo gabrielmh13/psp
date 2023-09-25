@@ -18,5 +18,6 @@ model transactions {
   card_number Int
   card_owner String
   validity DateTime
-  verification_code Int
+  verification_code String
+  created_at DateTime @default(now())
 }

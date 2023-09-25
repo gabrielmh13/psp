@@ -1,6 +1,8 @@
 import { FastifyInstance } from "fastify"
-import { ping } from "./ping"
+import { StatusRoute } from "./Status"
+import { TransactionsRoutes } from "./TransactionsRoutes"
 
 export const routes = async (app: FastifyInstance) => {
-    app.register(ping)
+    app.register(StatusRoute)
+    app.register(TransactionsRoutes)
 }
